@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root{
+    --Blue: hsl(246, 80%, 60%);
+--Light-orange: hsl(15, 100%, 70%);
+--Soft-blue: hsl(195, 74%, 62%);
+--Light-red: hsl(348, 100%, 68%);
+--Lime-green: hsl(145, 58%, 55%);
+--Violet: hsl(264, 64%, 52%);
+--Soft-orange: hsl(43, 84%, 65%);
+/* ### Neutral */
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+}
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--Very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr); 
+      grid-gap: 20px;
+}
+.box{
+    border-radius: 10px;
+    width: 220px;
+   
+    background-color: var(--Dark-blue);
+}
+/* a box  */
+.a{
+    grid-row: 1 / 3;
+    animation: appearFromLeft 2s ease-out;
+    height: 430px;
+}
+.a .a-box{
+    padding: 20px;
+    height: 70%;
+    background-color: var(--Blue);
+    border-radius: 10px;
+}
+.a-box .jeremy{
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 60px;
+}
+.a-box p{
+    padding-top: 30px;
+    color: var(--Pale-Blue);
+}
+.a-box h1{
+    color: white;
+    font-weight: 300;
+}
+.a .aa-box{
+    padding: 10px 20px;
+    line-height: 35px;
+    color: var(--Pale-Blue);
+    cursor: pointer;
+}
+/* animation  */
+.aa-box p {
+   
+    transform: translateY(0px); /* Move the element 20px up initially */
+    transition: opacity 0.5s, transform 0.5s; /* Apply transition effect */
+}
+.aa-box p.selected {
+    transform: translateY(10px); /* Move the selected element to its default position */
+}
+#daily:hover, #weekly:hover, #monthly:hover{
+    color: white;
+}
+/* all style  */
+#all:hover{
+    background-color: var(--Desaturated-blue);
+}
+.b .b-box, .c .c-box, .d .d-box, .e .e-box, .f .f-box, .g .g-box{
+    background-color: var(--Dark-blue);
+    height: 80%;
+    border-radius: 10px;
+    margin-top: 42px;
+    padding: 20px;
+    cursor: pointer;
+    animation: popUp 4s ease-out;
+}
+.b-box .b-new,.c-box .c-new,.d-box .d-new, .e-box .e-new, .f-box .f-new, .g-box .g-new{
+    display: flex;
+    justify-content: space-between;
+}
+.mobile{
+    padding-top: 20px;
+}
+.b-new p, .c-new p, .d-new p, .e-new p, .f-new p, .g-new p{
+    color: white;
+} 
+.b-box h1, .c-box h1, .d-box h1, .e-box h1, .f-box h1, .g-box h1{
+    
+    color: white;
+    font-weight: 300;
+    font-size: 50px;
+}
+.b-box p, .c-box p, .d-box p, .e-box p, .f-box p, .g-box p{
+    color: var(--Pale-Blue);
+    font-weight: 300;
+}
+/* b box  */
+.b{
+    background-color: var(--Light-orange);
+    background-image: url("./time-tracking-dashboard-main/images/icon-work.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: dropFromTop 2s ease-out;
+}
+/* c box  */
+.c{
+    background-color: var(--Soft-blue);
+    background-image: url("./time-tracking-dashboard-main/images/icon-play.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: dropFromTop 2s ease-out;
+}
+/* c box  */
+.d{
+    background-color: var(--Light-red);
+    background-image: url("./time-tracking-dashboard-main/images/icon-study.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: dropFromTop 2s ease-out;
+}
+/* c box  */
+.e{
+    background-color: var(--Lime-green);
+    background-image: url("./time-tracking-dashboard-main/images/icon-exercise.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: appearFromBottom 2s ease-out;
+}
+/* c box  */
+.f{
+    background-color: var(--Violet);
+    background-image: url("./time-tracking-dashboard-main/images/icon-social.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: appearFromBottom 2s ease-out;
+}
+/* c box  */
+.g{
+    background-color: var(--Soft-orange);
+    background-image: url("./time-tracking-dashboard-main/images/icon-self-care.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    animation: appearFromBottom 2s ease-out;
+}
+@keyframes dropFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes appearFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes popUp {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes appearFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+@media screen and (max-width:950px){
+    .wrapper{
+        margin: 0 20px;
+    }
+    .box{
+        width: auto;
+    }
+}
+@media screen and (max-width:800px){
+    .wrapper{
+        margin: 10px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: repeat(7, 1fr); 
+          grid-gap: 20px;
+    }
+    .box{
+        width: 500px;
+    }
+    .a{
+        grid-row: 1 / 2;
+        animation: appearFromLeft 2s ease-out;
+        height: auto;
+    }
+    .a-box{
+        display: flex;
+        gap: 20px;
+        margin: 0 auto;
+        align-items: center;
+       
+    }
+    .a-box p{
+        padding-top: 0px;
+    }
+    .aa-box{
+        display: flex;
+        justify-content: space-between;
+    }
+    .mobile{
+        display: flex;
+        justify-content: space-between;
+    }
+    .b-box p, .c-box p, .d-box p, .e-box p, .f-box p, .g-box p{
+        color: var(--Pale-Blue);
+        font-weight: 300;
+        padding-top: 10px;
+    }
+}
+@media screen and (max-width:600px){
+    .wrapper{
+        margin: 40px 10px;
+       
+    }
+    .box{
+        width: auto;
+    }
+    .b-box p, .c-box p, .d-box p, .e-box p, .f-box p, .g-box p{
+       font-size: 12px;
+    }
+    .b-box h1, .c-box h1, .d-box h1, .e-box h1, .f-box h1, .g-box h1{
+        font-size: 40px;
+    }
+}
